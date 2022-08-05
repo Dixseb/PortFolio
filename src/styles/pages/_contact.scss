@@ -1,0 +1,112 @@
+.contactContent {
+  background: $color-3;
+  border-radius: $borderRadius;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 45% 35%;
+
+  .header {
+    width: 100%;
+    position: relative;
+    background: $color-1;
+    height: 340px;
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(../../media/map.jpg) no-repeat center top/cover;
+      filter: grayscale(100%);
+    }
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 30px;
+      background: url(../../media/shape.svg) no-repeat center /cover;
+
+    }
+  }
+  .contactBox {
+    background: $color-5;
+    margin: auto;
+    padding: 1rem 1rem;
+    position: relative;
+    z-index: 2;
+    border-radius: $borderRadius;
+    box-shadow: 0 3px 10px #333;
+    width: 50%;
+    min-width: 440px;
+    min-height: 200px;
+    transform: translate(1%, 140%);
+    h1 {
+      text-align: center;
+      margin-top: 0.3rem;
+      position: relative;
+      color: $color-2;
+
+      &:after {
+        content: '';
+        height: 1px;
+        width: 50%;
+        background: $color-1;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    ul {
+      height: 72%;
+      width: 100%;
+      display: grid;
+      margin-top: 3.5rem;
+
+      li {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin-bottom: 10px;
+      }
+
+      i {
+        font-size: 1.4rem;
+        transform: translateY(5px);
+        color: $color-2;
+        transform: translateX(0.6rem);
+
+      }
+      span {
+        font-size: 1.4rem;
+        position: relative;
+        background: transparent;
+        border: none;
+        padding-left: 2rem;
+        width: 350px;
+        transition: .2s ease;
+      }
+      .clickInput:hover {
+        transform: translateX(56px);
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 500px){
+  .contactContent {
+    .contactBox {
+      min-width: 100% !important;
+    }
+    span {
+      font-size: .9rem !important;
+    }
+    h4 {
+      font-size: .9rem;
+    }
+  }
+}
